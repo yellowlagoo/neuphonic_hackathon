@@ -11,7 +11,8 @@ TRIGGER_WORDS = ["stress", "relapse", "craving", "alone", "tempted"]
 def notify_sponsor(message):
     sponsor_email = "sponsor@example.com"  # Replace with actual sponsor email
     subject = "Trigger Alert: Please Check on Your Sponsee"
-    body = f"The assistant has detected a potential trigger in the user's message. Message: {message}"
+    body = f"The assistant has detected a potential trigger in the user's message"
+    #body = f"The assistant has detected a potential trigger in the user's message. Message: {message}"
     
     msg = MIMEText(body)
     msg["Subject"] = subject
@@ -48,7 +49,7 @@ def engage_conversation():
 
     # Check for triggers and notify the sponsor if any are found
     if detect_trigger(user_message):
-        print("Trigger detected, notifying sponsor...")
+       # print("Trigger detected, notifying sponsor...")
         notify_sponsor(user_message)
     
     # Generate a motivational response for the user
